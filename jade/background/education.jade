@@ -25,11 +25,6 @@ unless _.isEmpty(resume.education)
                     |#{education_info.area}, #{education_info.studyType},&nbsp;
                   |#{education_info.institution}
 
-                p.clear-margin.text-muted
-                  small
-                    |#{education_info.startDate} - #{education_info.endDate || 'Present'}
-                i= education_info.gpa
-
                 unless _.isEmpty(education_info.courses)
                   .space-top.labels
                     - each course in education_info.courses
