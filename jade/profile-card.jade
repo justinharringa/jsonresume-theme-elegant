@@ -20,18 +20,16 @@ mixin render_links(profiles)
 section.col-md-3.card-wrapper.profile-card-wrapper.affix
   .card.profile-card
     span.profile-pic-container
-      .profile-pic
-        img.media-object.img-circle.center-block(
-          data-src="holder.js/100x100",
-          alt=resume.basics.name,
-          src=resume.basics.picture,
-          itemprop="image")
+      unless _.isEmpty(resume.basics.picture)
+        .profile-pic
+          img.media-object.img-circle.center-block(
+            data-src="holder.js/100x100",
+            alt=resume.basics.name,
+            src=resume.basics.picture,
+            itemprop="image")
 
       .name-and-profession.text-center
         h3(itemprop="name"): b= resume.basics.name
-        h5.text-muted(itemprop="jobTitle")= resume.basics.label
-
-    hr
 
     .contact-details.clearfix
       if resume.basics.computed_location
@@ -46,8 +44,6 @@ section.col-md-3.card-wrapper.profile-card-wrapper.affix
           a(href=resume.basics.website, target="_blank")= resume.basics.website
       if resume.basics.languages
         +profile_card_detail('icon-language', resume.basics.languages, null, 'Languages I speak')
-
-    hr
 
     .social-links.text-center
       div

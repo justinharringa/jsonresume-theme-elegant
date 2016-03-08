@@ -10,6 +10,7 @@ unless _.isEmpty(resume.awards)
       .content
         ul.list-unstyled
           - each award in resume.awards
+            hr.clear-margin
             li.card.card-nested
               .content
                 p.clear-margin(itemprop="award")

@@ -10,6 +10,7 @@ unless _.isEmpty(resume.education)
       .content
         ul.list-unstyled
           - each education_info in resume.education
+            hr.clear-margin
             li.card.card-nested
               .content
                 p.clear-margin.relative
@@ -24,7 +25,7 @@ unless _.isEmpty(resume.education)
                     |#{education_info.area}, #{education_info.studyType},&nbsp;
                   |#{education_info.institution}
 
-                p.text-muted
+                p.clear-margin.text-muted
                   small
                     |#{education_info.startDate} - #{education_info.endDate || 'Present'}
                 i= education_info.gpa

@@ -52,7 +52,7 @@ function render(resume) {
     var addressAttrs = ['address', 'city', 'region', 'countryCode', 'postalCode'];
     var css = fs.readFileSync(__dirname + '/assets/css/theme.css', 'utf-8');
 
-    resume.basics.picture = utils.getUrlForPicture(resume);
+    resume.basics.picture = (resume.basics.picture == 'none') ? "" : utils.getUrlForPicture(resume);
 
     addressValues = _(addressAttrs).map(function(key) {
         return resume.basics.location[key];

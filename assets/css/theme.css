@@ -246,6 +246,7 @@
 }
 body {
   font-family: 'Lato';
+  font-size: 9px;
   background: #f0f0f0;
   color: #333333;
 }
@@ -256,13 +257,11 @@ body {
   background: #ffffff;
   border: 1px solid #e6e6e6;
   border-radius: 3px;
-  min-height: 300px;
-  padding: 10px;
+  padding: 5px;
 }
 .card-nested {
   min-height: 0;
-  margin-bottom: 10px;
-  border-width: 1px 0 0 0;
+  border-width: 0;
 }
 .card-nested:before,
 .card-nested:after {
@@ -290,7 +289,7 @@ body {
 }
 .background-details .detail {
   display: table;
-  padding: 10px 0;
+  padding: 0;
 }
 .background-details .detail .icon {
   min-width: 45px;
@@ -374,6 +373,9 @@ body {
   right: 100%;
   top: 4px;
   left: -10px;
+}
+.list-unstyled {
+  margin: 0;
 }
 /*
     Credits: http://codyhouse.co/demo/smart-fixed-navigation/index.html
@@ -865,5 +867,8 @@ body {
   }
   .pagebreak {
     page-break-before: always;
+  }
+  .card {
+    border: 0;
   }
 }

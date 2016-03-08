@@ -10,27 +10,17 @@ unless _.isEmpty(resume.volunteer)
       .content
         ul.list-unstyled
           - each volunteer_info in resume.volunteer
+            hr.clear-margin
             li.card.card-nested
               .content
                 p.clear-margin.relative
-                  if !volunteer_info.endDate
-                    i.icon-circle.current-event(
-                      rel="tooltip",
-                      title="Currently Volunteering",
-                      data-placement="left"
-                    )
-
                   strong= volunteer_info.position + ', '
                   if volunteer_info.website
                     a(href=volunteer_info.website, target="_blank")= volunteer_info.organization
                   else
                     |#{volunteer_info.organization}
 
-                p.text-muted
-                  small
-                    |#{volunteer_info.startDate} - #{volunteer_info.endDate || 'Present'}
-
-                p= volunteer_info.summary
+                p.clear-margin= volunteer_info.summary
 
                 unless _.isEmpty(volunteer_info.highlights)
                   ul

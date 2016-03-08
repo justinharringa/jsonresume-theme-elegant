@@ -9,15 +9,10 @@ unless _.isEmpty(resume.work)
 
       ul.list-unstyled
         - each experience in resume.work
+          hr.clear-margin
           li.card.card-nested.clearfix
             .content
               p.clear-margin.relative
-                if !experience.endDate
-                  i.icon-circle.current-event(
-                    rel="tooltip",
-                    title="Currently Working",
-                    data-placement="left"
-                  )
                 strong= experience.position
                 |,&nbsp;
                 if experience.website
