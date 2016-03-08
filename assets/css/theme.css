@@ -852,6 +852,9 @@ body {
     vertical-align: middle;
     margin-left: 15px;
   }
+  .name-and-profession > h3 {
+    margin-top: 0;
+  }
   .contact-details .detail {
     position: relative;
     float: left;
@@ -867,6 +870,9 @@ body {
   }
   .pagebreak {
     page-break-before: always;
+  }
+  .card-wrapper {
+    padding: 0;
   }
   .card {
     border: 0;
