@@ -862,11 +862,16 @@ body {
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
+    width: 20%;
     padding: 0;
   }
   .floating-nav,
   .floating-nav-trigger {
     display: none;
+  }
+  .social-links {
+    padding: 10px 0 0;
+    line-height: normal;
   }
   .pagebreak {
     page-break-before: always;
@@ -876,5 +881,6 @@ body {
   }
   .card {
     border: 0;
+    padding: 3px;
   }
 }

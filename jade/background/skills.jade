@@ -7,10 +7,11 @@ unless _.isEmpty(resume.skills)
     .info
       h4.title.text-uppercase Skills
 
+      hr.clear-margin
+
       .content
         ul.list-unstyled
           - each skill in resume.skills
-            hr.clear-margin
             li.card.card-nested.card-skills
               if skill.display_progress_bar
                 .skill-level(data-toggle="tooltip", title=skill.level, data-placement="left")

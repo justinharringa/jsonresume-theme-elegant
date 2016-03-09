@@ -7,10 +7,11 @@ unless _.isEmpty(resume.education)
     .info
       h4.title.text-uppercase Education
 
+      hr.clear-margin
+
       .content
         ul.list-unstyled
           - each education_info in resume.education
-            hr.clear-margin
             li.card.card-nested
               .content
                 p.clear-margin.relative
