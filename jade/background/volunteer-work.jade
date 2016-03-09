@@ -2,10 +2,10 @@ unless _.isEmpty(resume.volunteer)
   .detail#volunteer-work
     .icon
       i.fs-lg.icon-child
-      span.mobile-title Volunteer Work
+      span.mobile-title Volunteer Work and Awards
 
     .info
-      h4.title.text-uppercase Volunteer Work
+      h4.title.text-uppercase Volunteer Work and Awards
 
       .content
         ul.list-unstyled
@@ -26,3 +26,12 @@ unless _.isEmpty(resume.volunteer)
                   ul
                     - each highlight in volunteer_info.highlights
                       li= highlight
+          - each award in resume.awards
+            hr.clear-margin
+            li.card.card-nested
+              .content
+                p.clear-margin(itemprop="award")
+                  strong= award.title + " "
+                  | #{award.awarder}
+
+                p.clear-margin= award.summary
