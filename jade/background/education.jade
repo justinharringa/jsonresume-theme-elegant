@@ -15,13 +15,6 @@ unless _.isEmpty(resume.education)
             li.card.card-nested
               .content
                 p.clear-margin.relative
-                  if !education_info.endDate
-                    i.icon-circle.current-event(
-                      rel="tooltip",
-                      title="Currently Pursuing",
-                      data-placement="left"
-                    )
-
                   strong
                     |#{education_info.area}, #{education_info.studyType},&nbsp;
                   |#{education_info.institution}

@@ -246,7 +246,7 @@
 }
 body {
   font-family: 'Lato';
-  font-size: 12px;
+  font-size: 11px;
   background: #f0f0f0;
   color: #333333;
 }
@@ -376,6 +376,12 @@ body {
 }
 .list-unstyled {
   margin: 0;
+}
+.social-links > div {
+  font-size: 0.8em;
+}
+.label-keyword {
+  margin-bottom: 2px;
 }
 /*
     Credits: http://codyhouse.co/demo/smart-fixed-navigation/index.html
@@ -881,6 +887,6 @@ body {
   }
   .card {
     border: 0;
-    padding: 3px;
+    padding: 1px;
   }
 }

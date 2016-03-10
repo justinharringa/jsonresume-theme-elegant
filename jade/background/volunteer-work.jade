@@ -6,11 +6,11 @@ unless _.isEmpty(resume.volunteer)
 
     .info
       h4.title.text-uppercase Volunteer Work and Awards
+      hr.clear-margin
 
       .content
         ul.list-unstyled
           - each volunteer_info in resume.volunteer
-            hr.clear-margin
             li.card.card-nested
               .content
                 p.clear-margin.relative
@@ -20,18 +20,13 @@ unless _.isEmpty(resume.volunteer)
                   else
                     |#{volunteer_info.organization}
 
-                p.clear-margin= volunteer_info.summary
-
                 unless _.isEmpty(volunteer_info.highlights)
                   ul
                     - each highlight in volunteer_info.highlights
                       li= highlight
           - each award in resume.awards
-            hr.clear-margin
             li.card.card-nested
               .content
                 p.clear-margin(itemprop="award")
                   strong= award.title + " "
                   | #{award.awarder}
-
-                p.clear-margin= award.summary

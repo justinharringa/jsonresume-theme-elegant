@@ -16,6 +16,7 @@ mixin render_links(profiles)
       data-toggle="tooltip",
       title= resume.basics.name + " on " + profile.network,
       class="link-" + profile.label + " icon-" + profile.label)
+    a(href=profile.url, target="_blank", class="social-link-url")= profile.url
 
 section.col-md-3.card-wrapper.profile-card-wrapper.affix
   .card.profile-card

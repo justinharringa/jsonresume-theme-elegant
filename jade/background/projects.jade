@@ -1,0 +1,18 @@
+unless _.isEmpty(resume.projects)
+    .detail#projects
+        .icon
+            i.fs-lg.icon-code
+            span.mobile-title Projects
+
+        .info
+            h4.title.text-uppercase Projects
+            hr.clear-margin
+
+            .content
+                ul.list-unstyled
+                    - each project in resume.projects
+                        li.card.card-nested
+                            .content
+                                p.clear-margin(itemprop="project")
+                                    strong= project.title + " "
+                                    |#{project.summary}

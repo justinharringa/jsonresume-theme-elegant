@@ -6,10 +6,10 @@ unless _.isEmpty(resume.work)
 
     .info
       h4.title.text-uppercase Work Experience
+      hr.clear-margin
 
       ul.list-unstyled
         - each experience in resume.work
-          hr.clear-margin
           li.card.card-nested.clearfix
             .content
               p.clear-margin.relative

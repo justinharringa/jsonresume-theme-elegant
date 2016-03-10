@@ -19,6 +19,7 @@ unless _.isEmpty(resume.skills)
 
               .skill-info
                 strong= skill.name
+                | &nbsp;&nbsp; * indicates expert level
 
                 unless _.isEmpty(skill.keywords)
                   .space-top.labels
