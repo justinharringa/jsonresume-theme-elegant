@@ -5,7 +5,8 @@ unless _.isEmpty(resume.projects)
             span.mobile-title Projects
 
         .info
-            h4.title.text-uppercase Projects
+            h4.title.text-uppercase.has-note Projects
+            .header-note &nbsp;&nbsp; (available in GitHub profile; linked below)
             hr.clear-margin
 
             .content
@@ -14,5 +15,10 @@ unless _.isEmpty(resume.projects)
                         li.card.card-nested
                             .content
                                 p.clear-margin(itemprop="project")
-                                    strong= project.title + " "
+                                    if project.website
+                                        |<strong>
+                                        a(href=project.website, target="_blank") #{project.title}
+                                        |</strong>&nbsp;
+                                    else
+                                        strong= project.title + " "
                                     |#{project.summary}

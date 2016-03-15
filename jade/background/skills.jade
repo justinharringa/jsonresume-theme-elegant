@@ -5,8 +5,8 @@ unless _.isEmpty(resume.skills)
       span.mobile-title Skills
 
     .info
-      h4.title.text-uppercase Skills
-
+      h4.title.text-uppercase.has-note Skills
+      .header-note &nbsp;&nbsp; (* indicates expert level)
       hr.clear-margin
 
       .content
@@ -19,7 +19,6 @@ unless _.isEmpty(resume.skills)
 
               .skill-info
                 strong= skill.name
-                | &nbsp;&nbsp; * indicates expert level
 
                 unless _.isEmpty(skill.keywords)
                   .space-top.labels

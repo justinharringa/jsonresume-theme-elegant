@@ -383,6 +383,14 @@ body {
 .label-keyword {
   margin-bottom: 2px;
 }
+.has-note,
+.header-note {
+  display: inline-block;
+}
+.education-date {
+  float: right;
+  display: inline-block;
+}
 /*
     Credits: http://codyhouse.co/demo/smart-fixed-navigation/index.html
 */

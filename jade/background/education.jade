@@ -14,10 +14,13 @@ unless _.isEmpty(resume.education)
           - each education_info in resume.education
             li.card.card-nested
               .content
-                p.clear-margin.relative
+                p.clear-margin.relative.has-note
                   strong
                     |#{education_info.area}, #{education_info.studyType},&nbsp;
-                  |#{education_info.institution}
+                    |#{education_info.institution}
+                .education-date
+                  small
+                    |#{education_info.endDate || 'Present'}
 
                 unless _.isEmpty(education_info.courses)
                   .space-top.labels
