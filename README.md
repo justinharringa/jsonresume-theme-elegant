@@ -4,6 +4,13 @@ Responsive theme for [JsonResume](https://jsonresume.org/) inspired by card layo
 
 [Theme Preview](http://themes.jsonresume.org/elegant)
 
+## CLONE!
+Clone of https://github.com/mudassir0909/jsonresume-theme-elegant with my customizations.
+
+## Clone usage
+1. Update `jsonresume-theme-elegant/node_modules/resume-schema/resume.json` with resume json
+2. Use `grunt exec:run_server` to view rendered resume
+
 ### Social Profiles
 The profiles are shown in the order in which they are specified in the `basics.profiles` array. By default, only 5 profiles are shown & others are revealed on demand.
 
