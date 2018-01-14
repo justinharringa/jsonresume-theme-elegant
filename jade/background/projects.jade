@@ -12,7 +12,7 @@ unless _.isEmpty(resume.projects)
             .content
                 ul.list-unstyled
                     - each project in resume.projects
-                        li.card.card-nested
+                        li.card.card-nested.no-margin-bottom
                             .content
                                 p.clear-margin(itemprop="project")
                                     if project.website

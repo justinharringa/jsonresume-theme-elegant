@@ -261,7 +261,11 @@ body {
 }
 .card-nested {
   min-height: 0;
+  margin-bottom: 10px;
   border-width: 0;
+}
+.no-margin-bottom {
+  margin-bottom: 0px;
 }
 .card-nested:before,
 .card-nested:after {
