@@ -1,28 +1,22 @@
 unless _.isEmpty(resume.education)
   .detail#education
-    .icon
-      i.fs-lg.icon-graduation-cap
-      span.mobile-title Education
-
     .info
       h4.title.text-uppercase Education
 
-      hr.clear-margin
+      //- hr.clear-margin
 
       .content
-        ul.list-unstyled
-          - each education_info in resume.education
-            li.card.card-nested.no-margin-bottom
-              .content
-                p.clear-margin.relative.has-note
-                  strong
-                    |#{education_info.area}, #{education_info.studyType},&nbsp;
-                    |#{education_info.institution}
-                .education-date
-                  small
-                    |#{education_info.endDate || 'Present'}
+        - each education_info in resume.education
+          .content
+            p.clear-margin.relative.has-note
+              strong
+                |#{education_info.area}, #{education_info.studyType},&nbsp;
+                |#{education_info.institution}
+            .education-date
+              small
+                |#{education_info.endDate || 'Present'}
 
-                unless _.isEmpty(education_info.courses)
-                  .space-top.labels
-                    - each course in education_info.courses
-                      span.label.label-keyword= course
+            unless _.isEmpty(education_info.courses)
+              .space-top.labels
+                - each course in education_info.courses
+                  span.label.label-keyword= course

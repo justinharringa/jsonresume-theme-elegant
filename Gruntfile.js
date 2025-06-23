@@ -17,13 +17,35 @@ module.exports = function(grunt) {
                 files: ['assets/less/**/*.less'],
                 tasks: ['less'],
                 options: {
-                    nospawn: true
+                    nospawn: true,
+                    livereload: true
+                }
+            },
+            resume: {
+                files: ['resume.json', 'node_modules/resume-schema/resume.json'],
+                tasks: ['exec:build_index'],
+                options: {
+                    follow: true,
+                    livereload: true,
+                    spawn: false
+                }
+            },
+            server: {
+                files: ['serve.js', 'index.js', 'render.js', 'jade/**/*.jade'],
+                tasks: ['exec:restart_server'],
+                options: {
+                    follow: true,
+                    livereload: true,
+                    spawn: false
                 }
             }
         },
         exec: {
             run_server: {
                 cmd: "node serve.js"
+            },
+            restart_server: {
+                cmd: "pkill -f 'node serve.js' || true && sleep 1 && node serve.js &"
             },
             build_index: {
                 cmd: "node render.js"
@@ -91,5 +113,10 @@ module.exports = function(grunt) {
     grunt.registerTask('serve', [
         'build',
         'exec:run_server'
-    ])
+    ]);
+    grunt.registerTask('dev', [
+        'build',
+        'exec:run_server',
+        'watch'
+    ]);
 }

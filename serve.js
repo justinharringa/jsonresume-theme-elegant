@@ -13,6 +13,14 @@ var path = require("path");
 var fs = require("fs");
 
 var port = 8888;
+var livereloadPort = 35729;
+
+// LiveReload script injection
+function injectLiveReload(html) {
+    var livereloadScript = '<script>document.write(\'<script src="http://\' + (location.host || \'localhost\').split(\':\')[0] + \':' + livereloadPort + '/livereload.js?snipver=1"></\' + \'script>\')</script>';
+    return html.replace('</head>', livereloadScript + '</head>');
+}
+
 http.createServer(function(req, res) {
     var picture = resume.basics.picture.replace(/^\//, "");
     if (picture && req.url.replace(/^\//, "") === picture.replace(/^.\//, "")) {
@@ -35,11 +43,17 @@ http.createServer(function(req, res) {
         res.writeHead(200, {
             "Content-Type": "text/html"
         });
-        res.end(render());
+        var html = render();
+        // Inject LiveReload script for development
+        if (process.env.NODE_ENV !== 'production') {
+            html = injectLiveReload(html);
+        }
+        res.end(html);
     }
 }).listen(port);
 
-console.log("Preview: http://localhost:8888/");
+console.log("Preview: http://localhost:" + port + "/");
+console.log("LiveReload: http://localhost:" + livereloadPort + "/");
 console.log("Serving..");
 
 function render() {

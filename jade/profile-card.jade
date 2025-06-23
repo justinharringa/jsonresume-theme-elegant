@@ -10,13 +10,17 @@ mixin profile_card_detail(icon, info, itemprop, icon_title)
 
 mixin render_links(profiles)
   - each profile in profiles
-    a.fs-2x.social-link(
-      href=profile.url,
-      target="_blank",
-      data-toggle="tooltip",
-      title= resume.basics.name + " on " + profile.network,
-      class="link-" + profile.label + " icon-" + profile.label)
-    a(href=profile.url, target="_blank", class="social-link-url")= profile.url
+    .detail
+      span.icon
+        a.fs-lg.social-link(
+          href=profile.url,
+          target="_blank",
+          data-toggle="tooltip",
+          title= resume.basics.name + " on " + profile.network,
+          class="link-" + profile.label + " icon-" + profile.label)
+      span.info
+        - var link_text = profile.username ? profile.username : profile.url
+        a(href=profile.url, target="_blank", class="social-link-url")= link_text
 
 section.col-md-3.card-wrapper.profile-card-wrapper.affix
   .card.profile-card
@@ -45,16 +49,8 @@ section.col-md-3.card-wrapper.profile-card-wrapper.affix
           a(href=resume.basics.website, target="_blank")= resume.basics.website
       if resume.basics.languages
         +profile_card_detail('icon-language', resume.basics.languages, null, 'Languages I speak')
-
-    .social-links.text-center
-      div
-        +render_links(resume.basics.top_five_profiles)
-
-        if resume.basics.remaining_profiles.length > 0
-          button.btn.btn-default.btn-sm.btn-circle-sm.pull-right.js-profiles-collapse(
-            data-toggle="collapse",
-            data-target="#remaining-profiles")
-            i.icon-chevron-down.fs-lg
-
-          #remaining-profiles.collapse.text-left
+      
+      +render_links(resume.basics.top_five_profiles)
+      if resume.basics.remaining_profiles.length > 0
+        #remaining-profiles.collapse.text-left
             +render_links(resume.basics.remaining_profiles)
