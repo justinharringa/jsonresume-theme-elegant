@@ -46,10 +46,18 @@ body {
     }
 }
 
+.contact-details {
+    @media print {
+       text-align: center; 
+       align: center;
+    }
+}
+
 .background-details {
     .detail {
         display: table;
         padding: 0;
+	width: 100%;
 
         .icon {
             min-width: 45px;
@@ -127,9 +135,7 @@ body {
 }
 
 ul {
-    @media (max-width: @screen-phone) {
-        padding-left: 25px;
-    }
+    padding-left: 25px;
 }
 
 .current-event {

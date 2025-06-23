@@ -25,21 +25,26 @@
         margin-top: 0;
     }
 
-    .contact-details {
+    .contact-details,
+    .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
         .detail {
-            .make-xs-column(3);
-            width: 20%;
-            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 10px;
+            
+            .icon {
+                padding-right: 5px;
+            }
         }
     }
 
     .floating-nav, .floating-nav-trigger {
         display: none;
-    }
-
-    .social-links {
-        padding: 10px 0 0;
-        line-height: normal;
     }
 
     .pagebreak {

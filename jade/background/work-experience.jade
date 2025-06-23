@@ -1,15 +1,11 @@
 unless _.isEmpty(resume.work)
   .detail#work-experience
-    .icon
-      i.fs-lg.icon-office
-      span.mobile-title Work Experience
-
     .info
       h4.title.text-uppercase Work Experience
 
       ul.list-unstyled
         - each experience in resume.work
-          hr.clear-margin
+          //- hr.clear-margin
           li.card.card-nested.clearfix
             .content
               p.clear-margin.relative
