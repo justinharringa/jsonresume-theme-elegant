@@ -30,7 +30,7 @@
     "jade": "^1.11.0",
     "jsonresume-themeutils": "^1.4.3",
     "moment": "^2.20.1",
-    "resume-schema": "0.0.15",
+    "resume-schema": "1.0.1",
     "tarball-extract": "0.0.3",
     "underscore": "^1.6.0"
   },
